@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CredibleKid – Make Your College Application Stand Out</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- 1. Global Styles & Variables --- */
+        :root {
+            --primary-text: #1A2C63;
+            --background: #FFFFFF;
+            --header-font: 'Poppins', sans-serif;
+            --body-font: 'Nunito', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--body-font);
+            background-color: var(--background);
+            color: var(--primary-text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 100px 0;
+            overflow: hidden;
+        }
+        
+        h1, h2, h3 {
+            font-family: var(--header-font);
+            font-weight: 700;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-size: 1.75rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 50px auto;
+            font-size: 1.1rem;
+        }
+
+        /* --- 2. Header & Navigation --- */
+        .site-header {
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: var(--background);
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .site-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--header-font);
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: var(--primary-text);
+        }
+
+        .main-nav ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .main-nav a {
+            text-decoration: none;
+            color: var(--primary-text);
+            font-weight: 600;
+            transition: opacity 0.3s ease;
+        }
+
+        .main-nav a:hover {
+            opacity: 0.7;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: var(--primary-text);
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+
+
+        /* --- 3. Buttons --- */
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-family: var(--body-font);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-text);
+            color: var(--background);
+        }
+
+        .btn-primary:hover {
+            background-color: #243b7a;
+        }
+
+        .btn-secondary {
+            background-color: var(--background);
+            color: var(--primary-text);
+            border: 2px solid var(--primary-text);
+        }
+        
+        .btn-secondary:hover {
+            background-color: rgba(26, 44, 99, 0.05);
+        }
+        
+        /* --- 4. Hero Section --- */
+        .hero {
+            padding-top: 120px;
+            padding-bottom: 120px;
+            text-align: center;
+        }
+
+        .hero .container {
+            max-width: 800px;
+        }
+        
+        .hero .subheadline {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero .body-text {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 2.5rem auto;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* --- 5. Programs Section --- */
+        #programs {
+            background-color: #f9fafb;
+        }
+        
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .package-card {
+            background-color: var(--background);
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .package-card h3 {
+            margin-bottom: 5px;
+        }
+        
+        .package-price {
+            font-family: var(--header-font);
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .package-card ul {
+            list-style-type: none;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        
+        .package-card ul li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+        }
+        
+        .package-card ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-text);
+            font-weight: 700;
+        }
+
+        .package-subtext {
+            font-size: 0.9rem;
+            color: #4b5563;
+            margin-top: auto;
+            padding-top: 20px;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        /* --- 6. Case Studies Section --- */
+        .logo-gallery {
+            position: relative;
+        }
+
+        .logo-scroller {
+            display: flex;
+            gap: 80px;
+            align-items: center;
+            padding: 20px 0;
+            overflow-x: auto;
+            -ms-overflow-style: none; /* IE and Edge */
+            scrollbar-width: none; /* Firefox */
+        }
+        
+        .logo-scroller::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, and Opera */
+        }
+
+        .logo-item img {
+            max-height: 45px;
+            width: auto;
+            filter: grayscale(100%);
+            opacity: 0.6;
+            transition: all 0.3s ease;
+        }
+        
+        .logo-item img:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+
+        /* --- 7. Contact Section --- */
+        #contact {
+             background-color: #f9fafb;
+        }
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #d1d5db;
+            font-family: var(--body-font);
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-text);
+            box-shadow: 0 0 0 3px rgba(26, 44, 99, 0.2);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.1rem;
+        }
+
+        /* --- 8. Footer --- */
+        .site-footer {
+            background-color: var(--primary-text);
+            color: #d1d5db;
+            padding: 30px 0;
+        }
+
+        .site-footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .footer-socials {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .footer-socials a {
+            color: #d1d5db;
+            transition: color 0.3s ease;
+        }
+
+        .footer-socials a:hover {
+            color: var(--background);
+        }
+
+        .footer-socials svg {
+            width: 24px;
+            height: 24px;
+        }
+
+
+        /* --- 9. Responsive (Mobile) Styles --- */
+        @media (max-width: 992px) {
+            .programs-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .package-card:last-child {
+                grid-column: 1 / -1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            
+            .main-nav {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--background);
+                flex-direction: column;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.5s ease-in-out;
+            }
+            
+            .main-nav.active {
+                max-height: 500px; /* Adjust as needed */
+                border-top: 1px solid #e5e7eb;
+            }
+
+            .main-nav ul {
+                flex-direction: column;
+                width: 100%;
+                padding: 20px 0;
+                gap: 0;
+            }
+            
+            .main-nav li {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .main-nav li a {
+                display: block;
+                padding: 15px 0;
+            }
+            
+            .main-nav .btn {
+                margin: 10px 20px;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+
+            .programs-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .site-footer .container {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="site-header">
+        <div class="container">
+            <a href="#home" class="logo">CredibleKid</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#programs">Programs</a></li>
+                    <li><a href="#case-studies">Case Studies</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#contact" class="btn btn-primary">Get Started</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Hero Section (Top of Page) -->
+        <section id="home" class="hero">
+            <div class="container">
+                <h1>Make Your College Application Stand Out.</h1>
+                <p class="subheadline">Appear as a Founder. Lead with Credibility.</p>
+                <p class="body-text">
+                    CredibleKid helps students create the image of a real founder by building a complete business presence—branding, social media, websites, pitch decks, and more—to showcase on college applications.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Book a Free Consultation</a>
+                    <a href="#programs" class="btn btn-secondary">Explore Packages</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Programs Section (3 Tiers of Service) -->
+        <section id="programs">
+            <div class="container">
+                <h2>Our Programs: Stand Out With a Complete Startup Presence</h2>
+                <div class="programs-grid">
+                    <!-- Starter Package -->
+                    <div class="package-card">
+                        <h3>Starter Package</h3>
+                        <p class="package-price">14,000 AED</p>
+                        <ul>
+                            <li>Branding (name, logo, colors, moodboard)</li>
+                            <li>Instagram account setup (with bio + visuals)</li>
+                            <li>LinkedIn company page</li>
+                            <li>One-page website (like a startup landing page)</li>
+                            <li>Investor-style pitch deck (10–12 slides)</li>
+                        </ul>
+                    </div>
+                    <!-- Pro Package -->
+                    <div class="package-card">
+                        <h3>Pro Package</h3>
+                        <p class="package-price">18,000 AED</p>
+                        <p><strong>Includes everything in Starter, plus:</strong></p>
+                        <ul>
+                            <li>Pitch deck training (1-on-1 coaching on how to present the deck)</li>
+                            <li>Online PR: Press release and mentions on blogs/directories to build social proof</li>
+                        </ul>
+                    </div>
+                    <!-- Venture Builder -->
+                    <div class="package-card">
+                        <h3>Venture Builder</h3>
+                        <p class="package-price">Custom Quote (High Ticket)</p>
+                        <p><strong>Includes everything in Pro, plus:</strong></p>
+                        <ul>
+                            <li>Full business development and build-out</li>
+                            <li>Consulting for automation, onboarding, and scalable systems</li>
+                            <li>Active support in turning the concept into a functioning venture</li>
+                            <li>Long-term growth strategy and system setup</li>
+                        </ul>
+                        <p class="package-subtext">This package is for students who want to take their concept beyond a mock business. We help bring their idea to life with real infrastructure and hands-on execution. The final product is a living, functional brand ready to grow.</p>
+                        <a href="#contact" class="btn btn-primary" style="margin-top: 20px; text-align: center;">Talk to Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Case Studies Section -->
+        <section id="case-studies">
+            <div class="container">
+                <h2>Brand Case Studies</h2>
+                <p class="section-subtitle">Some of the brands we've built or supported:</p>
+                <div class="logo-gallery">
+                    <div class="logo-scroller">
+                        <!-- Replace src with your actual logo files -->
+                        <div class="logo-item"><img src="https://via.placeholder.com/150x45/000000/FFFFFF?text=LifeForLevant" alt="LifeForLevant Logo"></div>
+                        <div class="logo-item"><img src="https://via.placeholder.com/150x45/000000/FFFFFF?text=DubaiSneaks" alt="DubaiSneaks Logo"></div>
+                        <div class="logo-item"><img src="https://via.placeholder.com/150x45/000000/FFFFFF?text=Tavana" alt="Tavana Logo"></div>
+                        <div class="logo-item"><img src="https://via.placeholder.com/150x45/000000/FFFFFF?text=Juvenate" alt="Juvenate Logo"></div>
+                        <div class="logo-item"><img src="https://via.placeholder.com/150x45/000000/FFFFFF?text=BlnkMuscle" alt="BlnkMuscle Logo"></div>
+                        <div class="logo-item"><img src="https://via.placeholder.com/150x45/000000/FFFFFF?text=SmartPocket" alt="SmartPocket Logo"></div>
+                         <!-- Add more logos by duplicating the line above -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section (Form at Bottom of Page) -->
+        <section id="contact">
+            <div class="container">
+                <h2>Get in Touch</h2>
+                <p class="section-subtitle">Fill out the form below and let us help you build the story that gets you noticed.</p>
+                <form class="contact-form" action="#" method="POST">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Tell us what you're looking for..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary submit-btn">Submit</button>
+                </form>
+            </div>
+        </section>
+        
+    </main>
+    
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-copyright">
+                © 2025 CredibleKid. All Rights Reserved.
+            </div>
+            <div class="footer-socials">
+                <a href="#" aria-label="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                </a>
+                <a href="#" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for mobile navigation toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.main-nav');
+        const navLinks = document.querySelectorAll('.main-nav a');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close menu when a link is clicked
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                }
+            });
+        });
+
+        // Optional: Simple form validation feedback
+        const form = document.querySelector('.contact-form');
+        form.addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevents actual submission for this demo
+            alert('Thank you for your message! We will get back to you soon.');
+            form.reset();
+        });
+    </script>
+
+</body>
+</html>
